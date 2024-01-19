@@ -4,7 +4,7 @@ package chapter_2.Question_2;
     * Write a Java program to simulate an ecosystem containing two types of creatures,
     bears and fish. The ecosystem consists of a river, which is modeled as a relatively
     large array. Each cell of the array should contain an Animal object, which can
-    be a Bear object, a Fish object, or null.  <this part done
+    be a Bear object, a Fish object, or null.
     In each time step, based on a random
     process, each animal either attempts to move into an adjacent array cell or stay
     where it is. If two animals of the same type are about to collide in the same
@@ -16,7 +16,7 @@ package chapter_2.Question_2;
  * 
  */
 
- import java.util.Random;
+import java.util.Random;
 
 public class Main {
     private static Animal[] riverEcosystem = new Animal[100];
@@ -30,13 +30,11 @@ public class Main {
             populateEcosystem();
             animalDecision();
             printEcosystem();
-            System.out.println("_________________________________________________________________");
+            System.out.println("_____________________________________________________________");
             counter++;
         }
-
-
-
     }
+
 
     /**
      * random number 0-1 if over 0.5: loops through :
@@ -68,7 +66,6 @@ public class Main {
                             }
                         }
                     }
-                    
                 }
                 else if (riverEcosystem[i] != null && riverEcosystem[i+1] == null ){
                     riverEcosystem[i+1] = riverEcosystem[i];
@@ -82,10 +79,8 @@ public class Main {
                 }
             }
         }
-
-
-
     }
+
 
     /**
      * populates array of 100 based on 3 random choices between bear, fish and null
@@ -110,7 +105,7 @@ public class Main {
      * prints array for visual
      */
     public static void printEcosystem(){
-        for (Animal e: riverEcosystem){
+        for (Animal e : riverEcosystem){
             System.out.print(e + " , ");
         }
         System.out.println();
