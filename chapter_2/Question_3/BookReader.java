@@ -15,13 +15,15 @@ public class BookReader{
     private String password;
     private double balance;
 
-    private HashMap<Book, String> purchasedBooks = new HashMap<>();
+    private  HashMap<Book, String> purchasedBooks = new HashMap<>();
     
+    BookReader(){}
 
-    BookReader(String uname, String pw, double balance,Book[] purchased, Book[] purchasedURL){
+    BookReader(String uname, String pw, double balance, HashMap<Book, String> purchasedBooks){
         this.userName = uname;
         this.password = pw;
         this.balance = balance;
+        this.purchasedBooks = purchasedBooks;
     }
 
 
@@ -49,8 +51,8 @@ public class BookReader{
         return balance;
     }
 
-    public  boolean buyBook(String name, String gendre, double price){
-        Book toBuy = new Book(name, gendre, price);
+    public  boolean buyBook(String name, String gendre){
+        Book toBuy = new Book(name, gendre);
         if (!purchasedBooks.containsKey(toBuy) && toBuy.getPrice() <= this.getBalance()){
             this.balance -= toBuy.getPrice();
             purchasedBooks.put(toBuy, "book url");
@@ -82,20 +84,5 @@ public class BookReader{
 
     public  void viewPurchasedBooks(){
         purchasedBooks.forEach((book, link)->System.out.println(book + "\n" + link));
-    }
-
-
-    public static void openURL(String url){
-        try {
-            if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)){
-                URI uri = new URI(url);
-                Desktop.getDesktop().browse(uri);
-            }
-        }
-        catch (Exception e){
-            e.printStackTrace();
-            System.exit(0);
-        }
-    }
-    
+    }    
 }

@@ -3,20 +3,18 @@ package chapter_2.Question_3;
 public class Book{
     private String bookName;
     private String bookGenre;
-    private double price;
+    private final double price = 10;
 
     Book(){}
 
-    Book(String name, String genre, double price){
+    Book(String name, String genre){
         this.bookName = name;
         this.bookGenre = genre;
-        this.price = price;
     }
 
     Book(Book object){
         this.bookName = object.bookName;
         this.bookGenre = object.bookGenre;
-        this.price = object.price;
     }
 
     public void setBookName(String bookName) {
@@ -33,11 +31,7 @@ public class Book{
     public String getBookGenre() {
         return bookGenre;
     }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
+    
     public double getPrice() {
         return price;
     }
