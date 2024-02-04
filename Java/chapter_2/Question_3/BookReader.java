@@ -51,8 +51,8 @@ public class BookReader{
         return balance;
     }
 
-    public  boolean buyBook(String name, String gendre){
-        Book toBuy = new Book(name, gendre);
+    public  boolean buyBook(String name, String genre){
+        Book toBuy = new Book(name, genre);
         if (!purchasedBooks.containsKey(toBuy) && toBuy.getPrice() <= this.getBalance()){
             this.balance -= toBuy.getPrice();
             purchasedBooks.put(toBuy, "book url");

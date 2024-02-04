@@ -13,7 +13,6 @@ package chapter_2.Question_2;
     array. If a bear and a fish collide, however, then the fish dies (i.e., it disappears).
     Use actual object creation, via the new operator, to model the creation of new
     objects, and provide a visualization of the array after each time step
- * 
  */
 
 import java.util.Random;
