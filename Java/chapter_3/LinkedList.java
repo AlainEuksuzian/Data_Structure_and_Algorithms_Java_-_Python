@@ -52,4 +52,41 @@ public class LinkedList {
         return size;
     }
 
+    /*Give an algorithm for finding the second-to-last node in a singly linked list in
+    which the last node is indicated by a null next reference */
+    public  String getSecondToLast(){
+
+        if (size > 1 ){
+            Node prev = null;
+            Node next = head;
+
+            while(next.link != null){
+                prev = next;
+                next = next.link;
+            }
+            return prev.item;
+        }
+        else{
+            return null;
+        }
+    }
+
+    public Node getHead(){
+        return head;
+    }
+
+    /*Give an implementation of the size( ) method for the SingularlyLinkedList class,
+    assuming that we did not maintain size as an instance variable */
+
+    public int getSizeManual(){
+
+        int size = 0;
+        Node position = head;
+        while(position != null){
+            position = position.link;
+            size++;
+        }
+        return size;
+    }
+
 }
