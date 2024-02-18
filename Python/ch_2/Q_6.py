@@ -18,7 +18,7 @@ def getFileInput(file:str) -> list:
     with open(file, 'r') as text:
         for words in text:
             for letters in words:
-                if letters is not " ":
+                if letters != " ":
                     letters = letters.rstrip()
                     wordList.append(letters)
     
