@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "chapter_3.Q_6.Main",
+            "projectName": "comp352-coding_12b45370"
+        },
+        {
+            "type": "java",
+            "name": "Q_five",
+            "request": "launch",
+            "mainClass": "chapter_3.Q_five",
+            "projectName": "comp352-coding_12b45370"
+        },
+        {
+            "type": "java",
             "name": "Q_three",
             "request": "launch",
             "mainClass": "chapter_3.Q_three",
